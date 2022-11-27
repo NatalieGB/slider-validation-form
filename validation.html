@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="photos/nasa-logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Validation Form</title>
+</head>
+<body>
+<header>
+    <div class=nav-bar>
+        <a class="logo" href="index.html">
+            <img src="photos/nasa-logo.svg" alt="logo">
+        </a>
+        <nav class="navigation" id="navigation">
+            <ul class="nav-ul">
+                <li><a class="nav-li" href="validation.html">Form Validation</a></li>
+                <li><a class="nav-li" href="#">Gallery</a></li>
+                <li><a class="nav-li" href="#">Follow NASA</a></li>
+                <li><a class="nav-li" href="#">NASA TV</a></li>
+                <li><a class="nav-li" href="#">About</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <div class="line line-up"></div>
+            <div class="line line-middle"></div>
+            <div class="line line-down"></div>
+        </div>
+    </div>
+</header>
+    <section class="form-wrapper">
+        <h3>NASA Astronaut program registration form</h3>
+        <form action="" id="regForm" method="post">
+            <div>
+                <label for="userNameField">UserName</label>
+                <input type="text" name="username" id="userNameField">
+                <span class="error-text" id="error_username"></span>
+            </div>
+            <div>
+                <label for="passwordField">Password</label>
+                <input type="password" name="password" id="passwordField">
+                <i id="toggle-icon" class="fa-solid fa-eye"></i>
+                <span class="error-text" id="error_password"></span>
+            </div>
+            <div>
+                <label for="passwordField2">Repeat Password</label>
+                <input type="password" name="password2" id="passwordField2">
+                <i id="toggle-icon2" class="fa-solid fa-eye"></i>
+                <span class="error-text" id="error_password2"></span>
+            </div>
+            <div>
+                <input type="checkbox" name="agree" id="agreeToTerms">
+                <label for="agreeToTerms">I agree to terms and conditions</label>
+                <span class="error-text" id="error_agree"></span>
+            </div>
+            <button class="submit-button" type="submit">Registration</button>
+        </form>
+    </section>
+    <script src="validation.js"></script>
+</body>
+</html>
