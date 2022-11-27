@@ -77,14 +77,14 @@ body {
     font-size: 30px;
     cursor: pointer;
     position: absolute;
-    top: 40%;
-    transform: translate(-50%);
+    top: 50%;
+    transform: translateY(-50%);
 }
 .right {
     right: 10px;
 }
 .left {
-    left: 60px;
+    left: 10px;
 }
 h3 {
     font-size: 20px;
@@ -109,13 +109,13 @@ h4 {
 .dot {
     height: 15px;
     width: 15px;
-    background-color: #bbb;
+    background-color: #817d7d;
     border-radius: 50%;
     margin: 10px;
     cursor: pointer;
 }
-.active, dot:hover{
-    background-color: #717171;
+.active-dot{
+    background-color: #ffffff;
 }
 h3{
     font-size: 20px;

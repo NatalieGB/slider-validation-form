@@ -5,17 +5,17 @@ registrationForm.addEventListener('submit', function (event) {
     let errors = {};
 
     let usernameValue = document.getElementById('userNameField').value;
-    if (usernameValue === "" && usernameValue.length < 6) {
+    if (usernameValue === "" || usernameValue.length < 6) {
         errors.username = 'Username length must be min. 6 characters';
     }
     let passwordValue = document.getElementById('passwordField').value;
     let passwordValue2 = document.getElementById('passwordField2').value;
 
-    if (passwordValue !== passwordValue2) {
-        errors.password2 = 'Passwords do not match';
-    }
     if (passwordValue === "") {
         errors.password = "Password cant be empty"
+    }
+    if (passwordValue !== passwordValue2) {
+        errors.password2 = 'Passwords do not match';
     }
     let agreeField = document.getElementById('agreeToTerms').checked;
     if (!agreeField) {

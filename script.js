@@ -12,7 +12,7 @@ hamburger.addEventListener("click", function () {
 let imageData = [
     {
         id: 1,
-        imageUrl: "https://cdn.mos.cms.futurecdn.net/S7694reojdRcYshMEHWmvS-1200-80.jpg.webp",
+        imageUrl: "https://cdn.mos.cms.futurecdn.net/aq9CcMN43HnnfnJnpk6gRL-1200-80.jpg.webp",
         slideTitle: "The \'Phantom Galaxy\'\n"
     },
     {
@@ -58,18 +58,30 @@ let sliderIndex = 0;
         const dotWrapper = document.createElement('div');
         dotWrapper.classList.add('dot-wrapper');
         imageData.forEach(element =>{
-            const dot = document.createElement('div');
+            let dot = document.createElement('div');
             dot.classList.add('dot');
+            let dotId = element.id;
+                if (dotId===sliderIndex + 1){
+                    dot.classList.add('active-dot');
+                }else {
+                    dot.classList.remove('active-dot');
+                }
             dotWrapper.appendChild(dot);
+            function dotChange(){
+                sliderIndex = dotId-1;
+                slide();
+            }
+            dot.addEventListener('click', dotChange);
         })
         return dotWrapper;
     }
+
     function slide(){
         sliderContent.innerHTML=" ";
         const slideItem = createDivSlides(imageData[sliderIndex]);
         const imgTag = createImgTag(imageData[sliderIndex]);
         const titleTag = createTitleTag(imageData[sliderIndex])
-        const dotElement = createDots();
+        const dotElement = createDots(imageData[sliderIndex]);
         slideItem.appendChild(imgTag);
         slideItem.appendChild(titleTag);
         sliderContent.appendChild(slideItem);
@@ -102,36 +114,3 @@ let sliderIndex = 0;
 
     setInterval(()=>{arrowRightClick()}, 3000);
     slide();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
